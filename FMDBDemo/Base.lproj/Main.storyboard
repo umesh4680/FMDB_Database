@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cep-CT-Evf"/>
+                        <viewControllerLayoutGuide type="bottom" id="jhj-C4-rzc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWT-h5-m7Z">
+                                <rect key="frame" x="20" y="145" width="280" height="30"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addToDB:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LRX-Vb-56b"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Age" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f6w-pD-bgf">
+                                <rect key="frame" x="20" y="82" width="80" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="wEM-xe-FD2"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="e9F-hV-f4L">
+                                <rect key="frame" x="20" y="33" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="jjF-JW-nyo"/>
+                                </connections>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Eaf-mk-YgP">
+                                <rect key="frame" x="20" y="206" width="280" height="342"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.53725490200000003" green="0.89019607840000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="pfk-jP-8Lc"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="E4p-89-xbS"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Eaf-mk-YgP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="1Ci-YO-Tvg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e9F-hV-f4L" secondAttribute="trailing" constant="4" id="DNH-wj-i1I"/>
+                            <constraint firstItem="jhj-C4-rzc" firstAttribute="top" secondItem="Eaf-mk-YgP" secondAttribute="bottom" constant="20" id="K3h-A6-pdm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f6w-pD-bgf" secondAttribute="trailing" constant="204" id="PKd-D9-k2N"/>
+                            <constraint firstItem="e9F-hV-f4L" firstAttribute="top" secondItem="cep-CT-Evf" secondAttribute="bottom" constant="13" id="RMb-Eu-0oi"/>
+                            <constraint firstItem="e9F-hV-f4L" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="Wee-E0-eZ1"/>
+                            <constraint firstItem="Eaf-mk-YgP" firstAttribute="top" secondItem="eWT-h5-m7Z" secondAttribute="bottom" constant="31" id="XnD-Nt-vJa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eWT-h5-m7Z" secondAttribute="trailing" constant="4" id="Y6a-Ic-80i"/>
+                            <constraint firstItem="f6w-pD-bgf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="aYb-GZ-V5J"/>
+                            <constraint firstItem="f6w-pD-bgf" firstAttribute="top" secondItem="e9F-hV-f4L" secondAttribute="bottom" constant="19" id="bLW-7V-5TA"/>
+                            <constraint firstAttribute="centerX" secondItem="e9F-hV-f4L" secondAttribute="centerX" id="cud-aH-dY6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Eaf-mk-YgP" secondAttribute="trailing" constant="4" id="gyR-kB-Kvj"/>
+                            <constraint firstItem="eWT-h5-m7Z" firstAttribute="top" secondItem="f6w-pD-bgf" secondAttribute="bottom" constant="33" id="jJ2-LN-TaA"/>
+                            <constraint firstItem="Eaf-mk-YgP" firstAttribute="top" secondItem="eWT-h5-m7Z" secondAttribute="bottom" constant="31" id="rD6-Ti-GU4"/>
+                            <constraint firstItem="eWT-h5-m7Z" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="yUx-pK-LGU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnAdd" destination="eWT-h5-m7Z" id="8R9-Mb-B7i"/>
+                        <outlet property="tableViewForDB" destination="Eaf-mk-YgP" id="y38-oX-Qao"/>
+                        <outlet property="txtFieldForAge" destination="f6w-pD-bgf" id="umd-Hl-ntR"/>
+                        <outlet property="txtFieldForName" destination="e9F-hV-f4L" id="tke-bv-t1v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
